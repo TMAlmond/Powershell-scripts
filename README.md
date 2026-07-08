@@ -1,5 +1,5 @@
 # Powershell-scripts
-A repo for Powershell scripts I'm developing while upskilling into Infrastructure
+A repo for PowerShell scripts I'm developing while upskilling into Infrastructure. 
 
 ## Scripts
 ### Get-EndpointInfo.ps1   
