@@ -50,12 +50,13 @@ $UninstallPaths = @(
     "HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
 )
 
-$InstalledApps = Get-ItemProperty $UninstallPaths -ErrorAction SilentlyContinue |
-    Where-Object { $_.DisplayName } |
-    Select-Object DisplayName, DisplayVersion, Publisher, InstallDate |
-    Sort-Object DisplayName
+$AppFilter = Read-Host "Enter app name to search or leave blank for all apps:"
 
-$InstalledApps | Format-Table -AutoSize
+if ([string]::IsNullOrWhiteSpace($AppFilter)) {
+    $InstalledApps | Format-Table -AutoSize
+} else {
+    $InstalledApps | Where-Object {$_.DisplayName -like "*$Appfilter*"} | Format-Table -AutoSize 
+    }
 
 Write-Host "`n-------------------------------------------"
 
