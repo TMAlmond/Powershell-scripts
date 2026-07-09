@@ -4,9 +4,10 @@ A repo for PowerShell scripts I'm developing while upskilling into Infrastructur
 ## Scripts
 ### Get-EndpointInfo.ps1   
 **Function**  
-Gathers and displays Computer name, Logged in User, OS name and version, uptime, disk space, service health and installed apps.  
+Gathers and displays Computer name, Logged in User, OS name and version, uptime, disk space, service health and installed apps.
+Also outputs EndpointHealth.csv and InstalledApps.csv to ./Logs/
 
 **Improvements**:
 - Remote support (Hostname or IP)
-- App name filtering
 - Error handling
+- Display assinged licenses of logged in user
