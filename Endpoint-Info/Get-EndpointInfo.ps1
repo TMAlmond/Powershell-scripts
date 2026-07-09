@@ -58,3 +58,8 @@ $InstalledApps = Get-ItemProperty $UninstallPaths -ErrorAction SilentlyContinue 
 $InstalledApps | Format-Table -AutoSize
 
 Write-Host "`n-------------------------------------------"
+
+#Export logs to .csv
+
+$EndpointHealth | ExPort-Csv ".\Logs\EndpointHealth.csv" -NoTypeInformation
+$InstalledApps | Export-Csv ".\Logs\InstalledApps.csv" -NoTypeInformation
